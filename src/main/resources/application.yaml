@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: labels-manager-service
+  liquibase:
+    enabled: true
+  datasource:
+    url: jdbc:postgres://localhost:5432/label_tasks
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
