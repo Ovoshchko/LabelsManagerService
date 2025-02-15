@@ -10,7 +10,6 @@ CREATE TABLE IF NOT EXISTS batch
 (
     id                  uuid PRIMARY KEY,
     name                varchar(255) not null,
-    status              varchar(255) not null,
     owner               varchar(255) not null,
     priority            integer      not null default 1,
     agreements          jsonb,
@@ -32,6 +31,7 @@ CREATE TABLE IF NOT EXISTS task
     status       varchar(255) not null DEFAULT 'NOT_STARTED',
     filled_count integer      not null default 0,
     final_answer jsonb,
+    properties jsonb not null,
     foreign key (batch_id) references batch (id)
 );
 
